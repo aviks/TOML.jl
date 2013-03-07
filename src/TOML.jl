@@ -283,7 +283,7 @@ function value (state)
         d = match(date_pattern, state.txt, state.index - 1)
         d = Calendar.ymd_hms(map(parse_int, d.captures)...,"UTC")
         state.index += 19
-        return Date(d)
+        return d
     elseif c == '-' || '0' <= c <= '9'
         state.index -= 1
         return numeric_value(state)
